@@ -1,7 +1,7 @@
-/*copy from
+п»ї/*copy from
  http://www.cyberforum.ru/java-j2se/thread1257076.html */
- /*Написать программу для поиска слова в файле, программа должна показать: количество таких слов в файле, для каждого найденного слова: номер строки, и номер слова в строке. Искомое слово вводим с клавиатуры.
-Я так думал что нужно сначала весь текст файла записать в ArrayList, но у меня не получается сделать поиск по файлу и вывести номер строки и номер слова в строке.*/
+ /*РќР°РїРёСЃР°С‚СЊ РїСЂРѕРіСЂР°РјРјСѓ РґР»СЏ РїРѕРёСЃРєР° СЃР»РѕРІР° РІ С„Р°Р№Р»Рµ, РїСЂРѕРіСЂР°РјРјР° РґРѕР»Р¶РЅР° РїРѕРєР°Р·Р°С‚СЊ: РєРѕР»РёС‡РµСЃС‚РІРѕ С‚Р°РєРёС… СЃР»РѕРІ РІ С„Р°Р№Р»Рµ, РґР»СЏ РєР°Р¶РґРѕРіРѕ РЅР°Р№РґРµРЅРЅРѕРіРѕ СЃР»РѕРІР°: РЅРѕРјРµСЂ СЃС‚СЂРѕРєРё, Рё РЅРѕРјРµСЂ СЃР»РѕРІР° РІ СЃС‚СЂРѕРєРµ. РСЃРєРѕРјРѕРµ СЃР»РѕРІРѕ РІРІРѕРґРёРј СЃ РєР»Р°РІРёР°С‚СѓСЂС‹.
+РЇ С‚Р°Рє РґСѓРјР°Р» С‡С‚Рѕ РЅСѓР¶РЅРѕ СЃРЅР°С‡Р°Р»Р° РІРµСЃСЊ С‚РµРєСЃС‚ С„Р°Р№Р»Р° Р·Р°РїРёСЃР°С‚СЊ РІ ArrayList, РЅРѕ Сѓ РјРµРЅСЏ РЅРµ РїРѕР»СѓС‡Р°РµС‚СЃСЏ СЃРґРµР»Р°С‚СЊ РїРѕРёСЃРє РїРѕ С„Р°Р№Р»Сѓ Рё РІС‹РІРµСЃС‚Рё РЅРѕРјРµСЂ СЃС‚СЂРѕРєРё Рё РЅРѕРјРµСЂ СЃР»РѕРІР° РІ СЃС‚СЂРѕРєРµ.*/
 // question
 public static void main(String[] args) throws IOException{
         FileReader fr = new FileReader("slovar");
@@ -32,19 +32,19 @@ public static void main(String[] args) throws IOException{
 
 // asked
 public static void main(String[] args) throws FileNotFoundException, IOException {
-        String searchWord = "ходил"; // слово заменить на нужное
-        FileInputStream fis = new FileInputStream(new File("E:/1.txt")); // путь заменить на нужный
+        String searchWord = "С…РѕРґРёР»"; // СЃР»РѕРІРѕ Р·Р°РјРµРЅРёС‚СЊ РЅР° РЅСѓР¶РЅРѕРµ
+        FileInputStream fis = new FileInputStream(new File("E:/1.txt")); // РїСѓС‚СЊ Р·Р°РјРµРЅРёС‚СЊ РЅР° РЅСѓР¶РЅС‹Р№
         byte[] content = new byte[fis.available()];
         fis.read(content);
         fis.close();
-        String[] lines = new String(content, "Cp1251").split("\n"); // кодировку указать нужную
+        String[] lines = new String(content, "Cp1251").split("\n"); // РєРѕРґРёСЂРѕРІРєСѓ СѓРєР°Р·Р°С‚СЊ РЅСѓР¶РЅСѓСЋ
         int i = 1;
         for (String line : lines) {
             String[] words = line.split(" ");
             int j = 1;
             for (String word : words) {
                 if (word.equalsIgnoreCase(searchWord)) {
-                    System.out.println("Найдено в " + i + "-й строке, " + j + "-е слово");
+                    System.out.println("РќР°Р№РґРµРЅРѕ РІ " + i + "-Р№ СЃС‚СЂРѕРєРµ, " + j + "-Рµ СЃР»РѕРІРѕ");
                 }
                 j++;
             }
