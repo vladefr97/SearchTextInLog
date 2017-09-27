@@ -1,13 +1,15 @@
 <<<<<<< HEAD
 import javax.swing.*;
+<<<<<<< HEAD
 import javax.swing.tree.DefaultMutableTreeNode;
 
 =======
 Ôªøimport javax.swing.*;
 >>>>>>> bdbdaff6217d0d95c35c96a44bd229a2af883611
+=======
+>>>>>>> parent of b1806fc... tree
 import java.awt.*;
 import java.awt.event.*;
-import java.io.*;
 
 
 public class MainFrame extends JFrame {
@@ -31,12 +33,6 @@ public class MainFrame extends JFrame {
         panel.add(label);
  
         panel.add(Box.createRigidArea(new Dimension(10, 10)));
-        
-        DefaultMutableTreeNode top = new DefaultMutableTreeNode(" ‡Ú‡ÎÓ„ ÔÓËÒÍ‡:");
-              
-        		
-        
-        JTree tree = new JTree();
  
         JButton button = new JButton("–í—ã–±–æ—Ä –∫–∞—Ç–∞–ª–æ–≥–∞");
         button.setAlignmentX(CENTER_ALIGNMENT);
@@ -47,20 +43,11 @@ public class MainFrame extends JFrame {
                 int ret = fileopen.showDialog(null, "–û—Ç–∫—Ä—ã—Ç—å —Ñ–∞–π–ª");                
                 if (ret == JFileChooser.APPROVE_OPTION) {
                     File file = fileopen.getSelectedFile();
-                 //   label.setText(file.getPath()+"/" +file.getName());
-                    DefaultMutableTreeNode path = new DefaultMutableTreeNode (file.getPath());
-                    DefaultMutableTreeNode fileName = new DefaultMutableTreeNode (file.getName());
-                    path.add(fileName);
-                    top.add(path);
+                    label.setText(file.getName());
                 }
             }
         });
  
-        tree = new JTree(top);
-      
-        JScrollPane treeView = new JScrollPane(tree);
-        
-        panel.add(treeView);
         panel.add(button);
         panel.add(Box.createVerticalGlue());
         getContentPane().add(panel);
