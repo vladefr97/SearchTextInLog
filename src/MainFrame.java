@@ -1,6 +1,9 @@
 import javax.swing.*;
+import javax.swing.tree.DefaultMutableTreeNode;
+
 import java.awt.*;
 import java.awt.event.*;
+import java.io.*;
 
 
 public class MainFrame extends JFrame {
@@ -24,6 +27,12 @@ public class MainFrame extends JFrame {
         panel.add(label);
  
         panel.add(Box.createRigidArea(new Dimension(10, 10)));
+        
+        DefaultMutableTreeNode top = new DefaultMutableTreeNode("Каталог поиска:");
+              
+        		
+        
+        JTree tree = new JTree();
  
         JButton button = new JButton("Выбор каталога");
         button.setAlignmentX(CENTER_ALIGNMENT);
@@ -34,11 +43,20 @@ public class MainFrame extends JFrame {
                 int ret = fileopen.showDialog(null, "Открыть файл");                
                 if (ret == JFileChooser.APPROVE_OPTION) {
                     File file = fileopen.getSelectedFile();
-                    label.setText(file.getName());
+                 //   label.setText(file.getPath()+"/" +file.getName());
+                    DefaultMutableTreeNode path = new DefaultMutableTreeNode (file.getPath());
+                    DefaultMutableTreeNode fileName = new DefaultMutableTreeNode (file.getName());
+                    path.add(fileName);
+                    top.add(path);
                 }
             }
         });
  
+        tree = new JTree(top);
+      
+        JScrollPane treeView = new JScrollPane(tree);
+        
+        panel.add(treeView);
         panel.add(button);
         panel.add(Box.createVerticalGlue());
         getContentPane().add(panel);
