@@ -1,4 +1,4 @@
-import java.awt.Dimension;
+п»їimport java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
@@ -14,7 +14,7 @@ import javax.swing.JPanel;
 public class RunSearch {
 
 	public static void main(String[] args) {
-		//System.out.println ("Говнокодь");
+		//System.out.println ("Р“РѕРІРЅРѕРєРѕРґСЊ");
 		
 		 javax.swing.SwingUtilities.invokeLater(new Runnable() {
 	            public void run() {

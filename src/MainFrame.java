@@ -1,6 +1,10 @@
+<<<<<<< HEAD
 import javax.swing.*;
 import javax.swing.tree.DefaultMutableTreeNode;
 
+=======
+п»їimport javax.swing.*;
+>>>>>>> bdbdaff6217d0d95c35c96a44bd229a2af883611
 import java.awt.*;
 import java.awt.event.*;
 import java.io.*;
@@ -22,7 +26,7 @@ public class MainFrame extends JFrame {
          
         panel.add(Box.createVerticalGlue());
  
-        final JLabel label = new JLabel("Выбранный файл");
+        final JLabel label = new JLabel("Р’С‹Р±СЂР°РЅРЅС‹Р№ С„Р°Р№Р»");
         label.setAlignmentX(CENTER_ALIGNMENT);
         panel.add(label);
  
@@ -34,13 +38,13 @@ public class MainFrame extends JFrame {
         
         JTree tree = new JTree();
  
-        JButton button = new JButton("Выбор каталога");
+        JButton button = new JButton("Р’С‹Р±РѕСЂ РєР°С‚Р°Р»РѕРіР°");
         button.setAlignmentX(CENTER_ALIGNMENT);
  
         button.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 JFileChooser fileopen = new JFileChooser();             
-                int ret = fileopen.showDialog(null, "Открыть файл");                
+                int ret = fileopen.showDialog(null, "РћС‚РєСЂС‹С‚СЊ С„Р°Р№Р»");                
                 if (ret == JFileChooser.APPROVE_OPTION) {
                     File file = fileopen.getSelectedFile();
                  //   label.setText(file.getPath()+"/" +file.getName());
